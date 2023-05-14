@@ -6,6 +6,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -58,6 +59,8 @@ func init() {
 		INFO:     "INFO",
 		DEBUG:    "DEBG",
 	}
+	
+	log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
 
 	defaultLogger = NewLogger(DEBUG, "", os.Stdout)
 }
